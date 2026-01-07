@@ -19,6 +19,16 @@ const journeySteps = [
   },
 ];
 
+const platformLifecycle = [
+  "Product Design",
+  "Recommendation Engine",
+  "Underwriting",
+  "Plan Execution",
+  "Billing",
+  "Data Transmissions",
+  "Ongoing Administration",
+];
+
 const AhaMomentSlide = ({ onNavigateNext }: AhaMomentSlideProps) => {
   return (
     <SlideContainer
@@ -31,7 +41,7 @@ const AhaMomentSlide = ({ onNavigateNext }: AhaMomentSlideProps) => {
           <span className="text-brand-blue">Benefits in minutes, not weeks.</span>
         </h1>
 
-        <div className="relative mt-10 flex flex-1 items-center justify-center">
+        <div className="relative mt-8 flex flex-1 flex-col items-center justify-center">
           <div className="relative flex flex-col items-center gap-6 sm:flex-row sm:gap-0 sm:-space-x-10">
             {journeySteps.map((step, index) => (
               <div
@@ -49,6 +59,29 @@ const AhaMomentSlide = ({ onNavigateNext }: AhaMomentSlideProps) => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 w-full max-w-6xl">
+            <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-brand-gray/80">
+              <span>Singular platform experience</span>
+              <span className="rounded-full bg-brand-mint/20 px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-brand-darkBlue">
+                Built for SMBs
+              </span>
+            </div>
+
+            <div className="relative mt-4">
+              <div className="absolute left-4 right-4 top-2.5 h-px bg-brand-blue/20" />
+              <div className="flex justify-between gap-2">
+                {platformLifecycle.map((step) => (
+                  <div key={step} className="flex flex-1 flex-col items-center text-center">
+                    <span className="h-2.5 w-2.5 rounded-full bg-brand-blue" />
+                    <span className="mt-3 text-[0.65rem] font-medium leading-snug text-brand-gray md:text-xs">
+                      {step}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
