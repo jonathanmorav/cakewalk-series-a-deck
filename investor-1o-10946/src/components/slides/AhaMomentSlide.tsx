@@ -62,11 +62,8 @@ const AhaMomentSlide = ({ onNavigateNext }: AhaMomentSlideProps) => {
           </div>
 
           <div className="mt-10 w-full max-w-6xl">
-            <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-brand-gray/80">
-              <span>Singular platform experience</span>
-              <span className="rounded-full bg-brand-mint/20 px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-brand-darkBlue">
-                Built for SMBs
-              </span>
+            <div className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-gray/80">
+              A Singular Platform Experience Built for SMBs
             </div>
 
             <div className="relative mt-4">
