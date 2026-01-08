@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import BottomCornerLogo from "./BottomCornerLogo";
 import NavigationArrow from "./navigation/NavigationArrow";
-import cakewalkLogo from "@/assets/cakewalk-logo.png";
+import cakewalkLogo from "@/assets/cakewalk-logo-new.png";
 import metlifeLogo from "@/assets/metlife-logo.png";
 import sunLifeLogo from "@/assets/sunlife-logo.png";
 import globeLifeLogo from "@/assets/globe-life-logo.png";

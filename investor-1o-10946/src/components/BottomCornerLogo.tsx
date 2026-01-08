@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import cakewalkLogo from "@/assets/cakewalk-logo.png";
+import cakewalkLogo from "@/assets/cakewalk-logo-new.png";
 
 interface BottomCornerLogoProps {
   className?: string;

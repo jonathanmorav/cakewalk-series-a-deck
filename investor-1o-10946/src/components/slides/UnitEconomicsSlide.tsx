@@ -37,6 +37,28 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
       onNavigateNext={onNavigateNext}
     >
       <div className="absolute inset-0 flex flex-col px-12 py-8 pb-20">
+        {/* WORK IN PROGRESS Stamp */}
+        <div className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
+            animate={{ opacity: 1, scale: 1, rotate: -15 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="border-8 border-red-600 rounded-lg px-8 py-4 bg-transparent"
+            style={{
+              boxShadow: "inset 0 0 0 4px transparent",
+            }}
+          >
+            <p 
+              className="text-red-600 text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider text-center"
+              style={{
+                textShadow: "2px 2px 0 rgba(220, 38, 38, 0.3)",
+                fontFamily: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+              }}
+            >
+              WORK IN<br />PROGRESS
+            </p>
+          </motion.div>
+        </div>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}

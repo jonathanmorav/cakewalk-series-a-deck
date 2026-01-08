@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import cakewalkLogo from '@/assets/cakewalk-logo.png';
+import cakewalkLogo from '@/assets/cakewalk-logo-new.png';
 
 interface SectionTransitionProps {
   show: boolean;

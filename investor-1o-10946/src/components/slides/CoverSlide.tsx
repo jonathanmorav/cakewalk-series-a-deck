@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import SlideContainer from "@/components/ui/SlideContainer";
-import VantaAnimation from "@/components/cover/VantaAnimation";
-import cakewalkLogo from "@/assets/cakewalk-logo.png";
+import cakewalkLogo from "@/assets/cakewalk-logo-new.png";
 
 interface CoverSlideProps {
   onNavigateNext: () => void;
@@ -9,7 +8,7 @@ interface CoverSlideProps {
 
 /**
  * Slide 1: Cover
- * Full-screen hero with logo, starfield background, and round details.
+ * Clean white background with logo and text.
  */
 const CoverSlide = ({ onNavigateNext }: CoverSlideProps) => {
   const formattedMonthYear = new Date().toLocaleString("en-US", {
@@ -19,15 +18,11 @@ const CoverSlide = ({ onNavigateNext }: CoverSlideProps) => {
 
   return (
     <SlideContainer
-      background="bg-brand-darkBlue"
+      background="bg-white"
       showLogo={false}
       onNavigateNext={onNavigateNext}
-      navArrowClassName="text-white hover:text-brand-mint transition-colors"
     >
-      {/* Animated starfield background */}
-      <VantaAnimation />
-
-      {/* Content overlay */}
+      {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-12 pb-16">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -39,14 +34,11 @@ const CoverSlide = ({ onNavigateNext }: CoverSlideProps) => {
             src={cakewalkLogo}
             alt="Cakewalk Benefits"
             className="w-full max-w-[500px] h-auto"
-            style={{
-              filter: "drop-shadow(0 2px 20px rgba(0,0,0,0.15))",
-            }}
           />
         </motion.div>
 
         <motion.h1
-          className="mt-8 text-white text-3xl font-semibold tracking-wide md:text-4xl"
+          className="mt-8 text-brand-darkBlue text-3xl font-semibold tracking-wide md:text-4xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -55,7 +47,7 @@ const CoverSlide = ({ onNavigateNext }: CoverSlideProps) => {
         </motion.h1>
 
         <motion.p
-          className="mt-3 text-white/70 text-lg"
+          className="mt-3 text-brand-gray text-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.5 }}

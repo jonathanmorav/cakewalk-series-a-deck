@@ -1,7 +1,7 @@
 import {
   CoverSlide,
   MissionSlide,
-  AhaMomentSlide,
+  CakewalkSlide2,
   SolutionSlide,
   TAMSlide,
   CustomerJourneySlide,
@@ -31,7 +31,7 @@ export type DeckSection = {
  * 3. The Need (Solution design)
  * 4. Total Addressable Market
  * 5. Customer Journey
- * 6. Introducing Cakewalk
+ * 6. Cakewalk
  * 7. Go-To-Market
  * 8. Competitive Advantage
  * 9. Team
@@ -47,7 +47,7 @@ export const sections: DeckSection[] = [
   { id: "solution", title: "The Need", slideNumber: "3" },
   { id: "tam", title: "Total Addressable Market", slideNumber: "4" },
   { id: "customer-journey", title: "Customer Journey", slideNumber: "5" },
-  { id: "aha-moment", title: "Cakewalk", slideNumber: "6" },
+  { id: "cakewalk", title: "Cakewalk", slideNumber: "6" },
   { id: "gtm", title: "Go-To-Market", slideNumber: "7" },
   { id: "competitive-advantage", title: "Competitive Advantage", slideNumber: "8" },
   { id: "team", title: "Team", slideNumber: "9" },
@@ -62,7 +62,7 @@ export const sections: DeckSection[] = [
 export const sectionComponents = {
   "cover": CoverSlide,
   "mission": MissionSlide,
-  "aha-moment": AhaMomentSlide,
+  "cakewalk": CakewalkSlide2,
   "solution": SolutionSlide,
   "tam": TAMSlide,
   "customer-journey": CustomerJourneySlide,

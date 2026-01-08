@@ -29,9 +29,16 @@ const ConclusionSlide = ({ onNavigateNext }: ConclusionSlideProps) => {
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           className="text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center max-w-5xl leading-tight"
         >
-          34 million businesses deserve better.{" "}
-          <span className="text-brand-mint">Cakewalk.</span>
+          Every employee deserves great benefits.
         </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+          className="mt-4 text-xl md:text-3xl lg:text-4xl font-semibold text-brand-mint text-center max-w-5xl"
+        >
+          We're making it a Cakewalk.
+        </motion.h2>
       </div>
     </SlideContainer>
   );

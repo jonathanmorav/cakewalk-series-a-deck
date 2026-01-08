@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import NavigationArrow from "./navigation/NavigationArrow";
 import VantaAnimation from "./cover/VantaAnimation";
-import cakewalkLogo from "@/assets/cakewalk-logo.png";
+import cakewalkLogo from "@/assets/cakewalk-logo-new.png";
 interface CoverScreenProps {
   onNavigateNext: () => void;
 }

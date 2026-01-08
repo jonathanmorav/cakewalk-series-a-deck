@@ -18,20 +18,27 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
       highlights: [
         "ex-Chief Underwriting Officer at Prudential",
         "Former Chief Insurance Officer at Salty (acquired by CDK Global).",
-        "President at IBX, exited to Alliance Insurance Services",
+        "President at IBX, exited to Alliant Insurance Services",
       ],
     },
     {
       name: "Kevin McCarthy",
       title: "Board Director",
       image: kevinPhoto,
-      highlights: ["Former CEO, UNUM USA; Ex-Chairman of Salty"],
+      highlights: [
+        "Former CEO, Unum",
+        "Former COO, Unum Group",
+      ],
     },
     {
       name: "James Hall",
-      title: "",
+      title: "Board Director",
       image: jamesPhoto,
-      highlights: [],
+      highlights: [
+        "Founder & Executive Chairman, Embedded Insurance",
+        "Founder & CEO, Salty (Acquired by CDK Global)",
+        "Founder & Executive Chairman, Insurance Point (Acquired by Arthur J. Gallagher)",
+      ],
     },
   ];
 

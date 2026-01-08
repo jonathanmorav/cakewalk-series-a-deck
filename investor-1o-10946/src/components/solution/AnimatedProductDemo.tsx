@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, User, Mail, Phone, Building2, Users as UsersIcon, ChevronRight, Check, RotateCcw } from "lucide-react";
-import cakewalkLogo from "@/assets/cakewalk-logo.png";
+import cakewalkLogo from "@/assets/cakewalk-logo-new.png";
 
 interface FormData {
   firstName: string;

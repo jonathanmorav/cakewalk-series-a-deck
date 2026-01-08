@@ -2,7 +2,7 @@ import { Fragment, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import NavigationArrow from "./navigation/NavigationArrow";
 import BottomCornerLogo from "./BottomCornerLogo";
-import cakewalkLogo from "@/assets/cakewalk-logo.png";
+import cakewalkLogo from "@/assets/cakewalk-logo-new.png";
 
 interface CakewalkModelProps {
   onNavigateNext: () => void;
