@@ -1,7 +1,6 @@
 import {
   CoverSlide,
   MissionSlide,
-  TheNeedSlide,
   AhaMomentSlide,
   SolutionSlide,
   TAMSlide,
@@ -26,46 +25,43 @@ export type DeckSection = {
 /**
  * Series A Deck - Slide Structure
  *
- * The deck consists of 15 slides:
+ * The deck consists of 14 slides:
  * 1. Cover
  * 2. Mission
- * 3. Solution
- * 4. The Need
- * 5. Total Addressable Market
- * 6. The Aha Moment
- * 7. Customer Journey
- * 8. Go-To-Market
- * 9. Competitive Advantage
- * 10. Team
- * 11. Board of Directors
- * 12. Unit Economics
- * 13. Milestones
- * 14. The Ask
- * 15. Conclusion
+ * 3. The Need (Solution design)
+ * 4. Total Addressable Market
+ * 5. Customer Journey
+ * 6. Introducing Cakewalk
+ * 7. Go-To-Market
+ * 8. Competitive Advantage
+ * 9. Team
+ * 10. Board of Directors
+ * 11. Unit Economics
+ * 12. Milestones
+ * 13. The Ask
+ * 14. Conclusion
  */
 export const sections: DeckSection[] = [
   { id: "cover", title: "Cover", slideNumber: "1" },
   { id: "mission", title: "Mission", slideNumber: "2" },
-  { id: "solution", title: "Solution", slideNumber: "3" },
-  { id: "the-need", title: "The Need", slideNumber: "4" },
-  { id: "tam", title: "Total Addressable Market", slideNumber: "5" },
-  { id: "customer-journey", title: "Customer Journey", slideNumber: "6" },
-  { id: "aha-moment", title: "Introducing Cakewalk", slideNumber: "7" },
-  { id: "gtm", title: "Go-To-Market", slideNumber: "8" },
-  { id: "competitive-advantage", title: "Competitive Advantage", slideNumber: "9" },
-  { id: "team", title: "Team", slideNumber: "10" },
-  { id: "board-advisors", title: "Board of Directors", slideNumber: "11" },
-  { id: "unit-economics", title: "Unit Economics", slideNumber: "12" },
-  { id: "milestones", title: "Milestones", slideNumber: "13" },
-  { id: "the-ask", title: "The Ask", slideNumber: "14" },
-  { id: "conclusion", title: "Conclusion", slideNumber: "15" },
+  { id: "solution", title: "The Need", slideNumber: "3" },
+  { id: "tam", title: "Total Addressable Market", slideNumber: "4" },
+  { id: "customer-journey", title: "Customer Journey", slideNumber: "5" },
+  { id: "aha-moment", title: "Cakewalk", slideNumber: "6" },
+  { id: "gtm", title: "Go-To-Market", slideNumber: "7" },
+  { id: "competitive-advantage", title: "Competitive Advantage", slideNumber: "8" },
+  { id: "team", title: "Team", slideNumber: "9" },
+  { id: "board-advisors", title: "Board of Directors", slideNumber: "10" },
+  { id: "unit-economics", title: "Unit Economics", slideNumber: "11" },
+  { id: "milestones", title: "Milestones", slideNumber: "12" },
+  { id: "the-ask", title: "The Ask", slideNumber: "13" },
+  { id: "conclusion", title: "Conclusion", slideNumber: "14" },
 ];
 
 // Mapping of section IDs to their respective components
 export const sectionComponents = {
   "cover": CoverSlide,
   "mission": MissionSlide,
-  "the-need": TheNeedSlide,
   "aha-moment": AhaMomentSlide,
   "solution": SolutionSlide,
   "tam": TAMSlide,

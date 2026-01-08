@@ -37,8 +37,8 @@ const AhaMomentSlide = ({ onNavigateNext }: AhaMomentSlideProps) => {
     >
       <div className="absolute inset-0 flex flex-col px-10 md:px-14 lg:px-16 pb-12 pt-10">
         <h1 className="text-center text-[clamp(1.75rem,2.8vw,3.5rem)] font-bold text-brand-darkBlue whitespace-nowrap">
-          Introducing Cakewalk:{" "}
-          <span className="text-brand-blue">Benefits in minutes, not weeks.</span>
+          Cakewalk:{" "}
+          <span className="text-brand-blue">Better benefits, in minutes.</span>
         </h1>
 
         <div className="relative mt-8 flex flex-1 flex-col items-center justify-center">

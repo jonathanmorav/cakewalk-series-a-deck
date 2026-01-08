@@ -3,7 +3,6 @@
 
 export { default as CoverSlide } from "./CoverSlide";
 export { default as MissionSlide } from "./MissionSlide";
-export { default as TheNeedSlide } from "./TheNeedSlide";
 export { default as AhaMomentSlide } from "./AhaMomentSlide";
 export { default as SolutionSlide } from "./SolutionSlide";
 export { default as TAMSlide } from "./TAMSlide";

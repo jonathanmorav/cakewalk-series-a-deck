@@ -84,14 +84,15 @@ const TAMSlide = ({ onNavigateNext }: TAMSlideProps) => {
       onNavigateNext={onNavigateNext}
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-12 lg:px-16 pb-16">
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-darkBlue text-center leading-tight max-w-5xl"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-darkBlue text-center leading-tight"
         >
-          Cakewalk serves SMBs, the largest untouched insurance market in the U.S.
-        </motion.h1>
+          <h1 className="mb-2">Cakewalk unlocks benefits for SMBs.</h1>
+          <h1>The largest overlooked insurance market in the U.S.</h1>
+        </motion.div>
 
 
         <motion.div

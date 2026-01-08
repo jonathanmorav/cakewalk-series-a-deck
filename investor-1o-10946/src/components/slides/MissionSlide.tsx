@@ -34,7 +34,7 @@ const MissionSlide = ({ onNavigateNext }: MissionSlideProps) => {
         >
           Today, your{" "}
           <span className="text-brand-mint">company size</span>{" "}
-          determines your benefits.
+          determines your employee benefits.
         </motion.h1>
       </div>
     </SlideContainer>

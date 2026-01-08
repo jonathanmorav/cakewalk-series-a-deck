@@ -13,11 +13,6 @@ interface CustomerJourneySlideProps {
 const CustomerJourneySlide = ({ onNavigateNext }: CustomerJourneySlideProps) => {
   const headlineStats = [
     {
-      label: "Phases",
-      value: "7",
-      detail: "Distinct stages before benefits go live",
-    },
-    {
       label: "Steps",
       value: "40+",
       detail: "Manual handoffs and approvals",
@@ -37,7 +32,7 @@ const CustomerJourneySlide = ({ onNavigateNext }: CustomerJourneySlideProps) => 
       <div className="absolute inset-0 flex flex-col items-center justify-start px-10 md:px-14 lg:px-16 pb-12 pt-12 text-center">
         <div className="absolute left-1/2 top-8 -translate-x-1/2">
           <h2 className="text-[clamp(1.5rem,2.8vw,3.5rem)] font-bold text-brand-darkBlue whitespace-nowrap">
-            SMB Benefits, A Broken Customer Journey
+            A Broken Customer Journey
           </h2>
         </div>
         <div className="mt-[10vh] flex w-full flex-col items-center">
@@ -45,7 +40,7 @@ const CustomerJourneySlide = ({ onNavigateNext }: CustomerJourneySlideProps) => 
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-3"
+            className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-12 md:grid-cols-2"
           >
           {headlineStats.map((stat) => (
             <div key={stat.label} className="text-center">
