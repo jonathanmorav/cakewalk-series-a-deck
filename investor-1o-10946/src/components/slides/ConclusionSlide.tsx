@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import SlideContainer from "@/components/ui/SlideContainer";
+import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ConclusionSlideProps {
   onNavigateNext: () => void;
@@ -10,6 +12,42 @@ interface ConclusionSlideProps {
  * Mirror the Mission slide's bold, minimal treatment.
  */
 const ConclusionSlide = ({ onNavigateNext }: ConclusionSlideProps) => {
+  const isMobile = useIsMobile();
+
+  // Mobile View
+  if (isMobile) {
+    return (
+      <MobileSlideContainer
+        background="bg-gradient-to-br from-brand-darkBlue via-brand-blue to-brand-purple/90"
+        onNavigateNext={onNavigateNext}
+      >
+        {/* Glow effects */}
+        <div className="absolute top-10 right-0 w-48 h-48 bg-brand-mint/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-40 h-40 bg-brand-purple/15 rounded-full blur-3xl" />
+
+        <div className="text-center px-2">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            className="text-2xl font-bold text-white leading-relaxed"
+          >
+            Every employee deserves great benefits.
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            className="mt-4 text-xl font-semibold text-brand-mint"
+          >
+            We're making it a Cakewalk.
+          </motion.h2>
+        </div>
+      </MobileSlideContainer>
+    );
+  }
+
+  // Desktop View
   return (
     <SlideContainer
       background="bg-gradient-to-br from-brand-darkBlue via-brand-blue to-brand-purple/90"

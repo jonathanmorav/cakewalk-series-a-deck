@@ -13,8 +13,8 @@ const MilestonesSlide = ({ onNavigateNext }: MilestonesSlideProps) => {
       label: "SMBs Served",
     },
     {
-      value: "3,000+",
-      label: "Lives Enrolled",
+      value: "$3,000,000+",
+      label: "Gross Written Premium",
     },
     {
       value: "$700K+",
@@ -84,11 +84,11 @@ const MilestonesSlide = ({ onNavigateNext }: MilestonesSlideProps) => {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-8 grid w-full max-w-4xl grid-cols-3 gap-8 self-center md:gap-16"
+          className="mt-8 grid w-full max-w-5xl grid-cols-3 gap-4 self-center md:gap-8"
         >
           {yearOneStats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-4xl font-bold text-brand-blue md:text-5xl lg:text-6xl">
+              <p className="text-2xl font-bold text-brand-blue md:text-3xl lg:text-4xl">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm text-brand-gray md:text-base">{stat.label}</p>

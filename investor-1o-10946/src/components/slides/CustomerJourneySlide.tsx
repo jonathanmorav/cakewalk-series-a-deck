@@ -19,7 +19,7 @@ const CustomerJourneySlide = ({ onNavigateNext }: CustomerJourneySlideProps) => 
     },
     {
       label: "Timeline",
-      value: "3-6 weeks",
+      value: "8-12 weeks",
       detail: "Back-and-forth to activate coverage",
     },
   ];

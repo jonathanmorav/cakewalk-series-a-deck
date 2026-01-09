@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import SlideContainer from "@/components/ui/SlideContainer";
+import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MissionSlideProps {
   onNavigateNext: () => void;
@@ -12,6 +14,34 @@ interface MissionSlideProps {
  * - Mission (hero text)
  */
 const MissionSlide = ({ onNavigateNext }: MissionSlideProps) => {
+  const isMobile = useIsMobile();
+
+  // Mobile View
+  if (isMobile) {
+    return (
+      <MobileSlideContainer
+        background="bg-gradient-to-br from-brand-darkBlue via-brand-blue to-brand-purple/90"
+        onNavigateNext={onNavigateNext}
+      >
+        {/* Glow effects */}
+        <div className="absolute top-10 right-0 w-48 h-48 bg-brand-mint/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-40 h-40 bg-brand-purple/15 rounded-full blur-3xl" />
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+          className="text-2xl font-bold text-white text-center leading-relaxed px-2"
+        >
+          Our mission is to make high‑quality employee benefits{" "}
+          <span className="text-brand-mint">accessible and affordable</span>{" "}
+          for every small business.
+        </motion.h1>
+      </MobileSlideContainer>
+    );
+  }
+
+  // Desktop View
   return (
     <SlideContainer
       background="bg-gradient-to-br from-brand-darkBlue via-brand-blue to-brand-purple/90"
@@ -30,11 +60,11 @@ const MissionSlide = ({ onNavigateNext }: MissionSlideProps) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center max-w-5xl leading-tight"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center max-w-5xl leading-tight"
         >
-          Today, your{" "}
-          <span className="text-brand-mint">company size</span>{" "}
-          determines your employee benefits.
+          Our mission is to make high‑quality employee benefits{" "}
+          <span className="text-brand-mint">accessible and affordable</span>{" "}
+          for every small business.
         </motion.h1>
       </div>
     </SlideContainer>

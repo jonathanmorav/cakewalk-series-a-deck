@@ -28,10 +28,10 @@ export type DeckSection = {
  * The deck consists of 14 slides:
  * 1. Cover
  * 2. Mission
- * 3. The Need (Solution design)
- * 4. Total Addressable Market
- * 5. Customer Journey
- * 6. Cakewalk
+ * 3. The Solution
+ * 4. The Need (Customer Journey)
+ * 5. Cakewalk
+ * 6. Total Addressable Market
  * 7. Go-To-Market
  * 8. Competitive Advantage
  * 9. Team
@@ -44,10 +44,10 @@ export type DeckSection = {
 export const sections: DeckSection[] = [
   { id: "cover", title: "Cover", slideNumber: "1" },
   { id: "mission", title: "Mission", slideNumber: "2" },
-  { id: "solution", title: "The Need", slideNumber: "3" },
-  { id: "tam", title: "Total Addressable Market", slideNumber: "4" },
-  { id: "customer-journey", title: "Customer Journey", slideNumber: "5" },
-  { id: "cakewalk", title: "Cakewalk", slideNumber: "6" },
+  { id: "solution", title: "The Solution", slideNumber: "3" },
+  { id: "customer-journey", title: "The Need", slideNumber: "4" },
+  { id: "cakewalk", title: "Cakewalk", slideNumber: "5" },
+  { id: "tam", title: "Total Addressable Market", slideNumber: "6" },
   { id: "gtm", title: "Go-To-Market", slideNumber: "7" },
   { id: "competitive-advantage", title: "Competitive Advantage", slideNumber: "8" },
   { id: "team", title: "Team", slideNumber: "9" },

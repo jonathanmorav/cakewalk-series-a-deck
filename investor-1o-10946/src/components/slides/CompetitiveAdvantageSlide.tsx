@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
 import SlideContainer from "@/components/ui/SlideContainer";
+import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface CompetitiveAdvantageSlideProps {
   onNavigateNext: () => void;
 }
 
 const CompetitiveAdvantageSlide = ({ onNavigateNext }: CompetitiveAdvantageSlideProps) => {
+  const isMobile = useIsMobile();
+
   const comparisonRows = [
     {
       category: "Time to Coverage",
-      current: "3-6 weeks",
+      current: "8-12 weeks",
       cakewalk: "Minutes",
     },
     {
@@ -39,6 +43,61 @@ const CompetitiveAdvantageSlide = ({ onNavigateNext }: CompetitiveAdvantageSlide
     },
   ];
 
+  // Mobile View
+  if (isMobile) {
+    return (
+      <MobileSlideContainer
+        background="bg-white"
+        onNavigateNext={onNavigateNext}
+      >
+        <div className="w-full">
+          {/* Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-6"
+          >
+            <h1 className="text-2xl font-bold text-brand-darkBlue">
+              Why Cakewalk Wins
+            </h1>
+            <p className="mt-2 text-sm text-brand-gray">
+              End-to-end technology and risk pooling, purpose-built for the SMB.
+            </p>
+          </motion.div>
+
+          {/* Mobile Comparison Cards */}
+          <div className="space-y-3">
+            {comparisonRows.map((row, index) => (
+              <motion.div
+                key={row.category}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
+                className="bg-gray-50 rounded-lg p-4"
+              >
+                <p className="text-sm font-semibold text-brand-darkBlue mb-2">{row.category}</p>
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <p className="text-xs text-brand-gray/60 uppercase mb-1">Incumbent</p>
+                    <p className="text-sm text-brand-gray/70">{row.current}</p>
+                  </div>
+                  <div className="flex-1 text-right">
+                    <p className="text-xs text-brand-blue uppercase mb-1">Cakewalk</p>
+                    <span className="inline-block rounded-full bg-brand-mint/20 px-3 py-1 text-sm font-medium text-brand-darkBlue">
+                      {row.cakewalk}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </MobileSlideContainer>
+    );
+  }
+
+  // Desktop View
   return (
     <SlideContainer
       background="bg-white"
@@ -91,17 +150,17 @@ const CompetitiveAdvantageSlide = ({ onNavigateNext }: CompetitiveAdvantageSlide
                 >
                   {/* Category */}
                   <div>
-                    <p className="text-base font-semibold text-brand-darkBlue">{row.category}</p>
+                    <p className="text-lg md:text-xl font-semibold text-brand-darkBlue">{row.category}</p>
                   </div>
 
                   {/* Current/Traditional */}
                   <div className="text-center">
-                    <p className="text-base text-brand-gray/70">{row.current}</p>
+                    <p className="text-base md:text-lg text-brand-gray/80">{row.current}</p>
                   </div>
 
                   {/* Cakewalk */}
                   <div className="text-center">
-                    <span className="inline-block rounded-full bg-brand-mint/20 px-4 py-1.5 text-base font-medium text-brand-darkBlue">
+                    <span className="inline-block rounded-full bg-brand-mint/20 px-4 py-2 text-base md:text-lg font-semibold text-brand-darkBlue">
                       {row.cakewalk}
                     </span>
                   </div>

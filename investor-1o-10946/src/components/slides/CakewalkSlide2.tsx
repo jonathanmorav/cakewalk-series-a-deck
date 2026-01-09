@@ -123,7 +123,7 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
           >
             {/* Mini Headline */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-darkBlue mb-8">
-              Same Pool, Same Risk
+              Same Pool, Same Risk, Same Benefits
             </h2>
 
             {/* Pooling Visual - Two Circles */}
@@ -159,23 +159,13 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="flex h-40 w-40 md:h-48 md:w-48 flex-col items-center justify-center rounded-full bg-brand-mint text-brand-darkBlue shadow-lg"
               >
-                <span className="text-3xl md:text-4xl font-bold">2,500</span>
+                <span className="text-3xl md:text-4xl font-bold">2,000</span>
                 <span className="text-sm md:text-base font-medium">Companies</span>
                 <div className="mt-2 h-px w-12 bg-brand-darkBlue/40" />
                 <span className="mt-2 text-lg md:text-xl font-semibold">10,000</span>
                 <span className="text-xs md:text-sm">lives</span>
               </motion.div>
             </div>
-
-            {/* Caption below circles */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-6 text-center text-base md:text-lg text-brand-gray"
-            >
-              And now...<span className="font-semibold text-brand-darkBlue">the same benefits</span>
-            </motion.p>
 
             {/* Carrier Validated Section */}
             <motion.div
