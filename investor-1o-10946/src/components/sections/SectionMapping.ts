@@ -37,7 +37,7 @@ export type DeckSection = {
  * 9. Team
  * 10. Board of Directors
  * 11. Unit Economics
- * 12. Milestones
+ * 12. Traction
  * 13. The Ask
  * 14. Conclusion
  */
@@ -53,7 +53,7 @@ export const sections: DeckSection[] = [
   { id: "team", title: "Team", slideNumber: "9" },
   { id: "board-advisors", title: "Board of Directors", slideNumber: "10" },
   { id: "unit-economics", title: "Unit Economics", slideNumber: "11" },
-  { id: "milestones", title: "Milestones", slideNumber: "12" },
+  { id: "traction", title: "Traction", slideNumber: "12" },
   { id: "the-ask", title: "The Ask", slideNumber: "13" },
   { id: "conclusion", title: "Conclusion", slideNumber: "14" },
 ];
@@ -71,7 +71,7 @@ export const sectionComponents = {
   "team": TeamSlide,
   "board-advisors": BoardAdvisorsSlide,
   "unit-economics": UnitEconomicsSlide,
-  "milestones": MilestonesSlide,
+  "traction": MilestonesSlide,
   "the-ask": TheAskSlide,
   "conclusion": ConclusionSlide,
 };

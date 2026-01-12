@@ -16,10 +16,10 @@ const leadership = [
     title: "Chief Executive Officer",
     image: paulPhoto,
     highlights: [
-      "ex-Chief Underwriting Officer at Prudential",
-      "Former Chief Insurance Officer at Salty (acquired by CDK Global).",
-      "President at IBX, exited to Alliant Insurance Services",
-      "Leading expert on group benefit underwriting"
+      "Chief Underwriting Officer at Prudential",
+      "Chief Insurance Officer at Salty (acquired by CDK Global).",
+      "Co-Founder, President at IBX (acquired by Alliant Insurance Services)",
+      "Leading expert on group benefits underwriting"
     ]
   },
   {
@@ -37,7 +37,7 @@ const leadership = [
     title: "Chief Revenue Officer",
     image: billPhoto,
     highlights: [
-      "Former President of Heritage One, scaling mid-market benefits distribution.",
+      "President of Heritage One, scaling mid-market benefits distribution.",
       "Directed growth and partnerships at MGC Group.",
       "20+ years building carrier and broker relationships."
     ]
@@ -48,7 +48,7 @@ const leadership = [
     image: nivPhoto,
     highlights: [
       "VP, Products at Cover Whale, a high-growth insurtech.",
-      "Head of Product & Monetization at Content IQ (exit to Perion).",
+      "Head of Product & Monetization at Content IQ (acquired by Perion).",
       "Product-led growth expert focused on intuitive experiences."
     ]
   }

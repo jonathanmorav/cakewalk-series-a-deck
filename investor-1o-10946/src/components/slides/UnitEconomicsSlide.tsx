@@ -15,22 +15,22 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
   const isMobile = useIsMobile();
 
   const unitEconomicsCards = [
-    { label: "Premium Per Life", value: "$125" },
-    { label: "Revenue Per Life", value: "$31" },
-    { label: "Margin Per Life", value: "$18" },
-    { label: "LTV Per SMB", value: "$18,500" },
+    { label: "Premium Per Life / Month", value: "$460" },
+    { label: "Revenue Per Life / Month", value: "$32" },
+    { label: "Margin Per Life / Month", value: "$16" },
+    { label: "LTV Per SMB", value: "$19,000" },
     { label: "Persistency", value: "95%" },
   ];
 
   const projectionYears = ["2026(E)", "2027(E)", "2028(E)", "2029(E)", "2030(E)"];
   
   const projectionRows = [
-    { label: "Total Gross Written Premium*", values: ["$6.1M", "$74.6M", "$267.8M", "$346.5M", "$505.8M"] },
-    { label: "YOY Growth", values: ["—", "1121.4%", "258.9%", "29.4%", "46.0%"] },
-    { label: "Total Revenue", values: ["$1.5M", "$18.7M", "$67.0M", "$86.6M", "$126.5M"], highlight: true },
-    { label: "Net Income", values: ["-$6.3M", "$1.9M", "$16.8M", "$28.6M", "$63.3M"] },
-    { label: "Net Margin", values: ["-422.8%", "10.0%", "25.0%", "33.0%", "50.0%"] },
-    { label: "Lives Insured", values: ["4,067", "49,733", "178,533", "231,000", "337,200"] },
+    { label: "Total Gross Written Premium*", values: ["$6.1M", "$114M", "$342M", "$798M", "$1.8B"] },
+    { label: "YOY Growth", values: ["—", "1768.9%", "200.0%", "133.3%", "125.6%"] },
+    { label: "Year End ARR", values: ["$2.7M", "$7.7M", "$23.0M", "$53.8M", "$122.9M"], highlight: true },
+    { label: "Net Income", values: ["-$4.0M", "$0.8M", "$5.8M", "$17.8M", "$61.5M"] },
+    { label: "Net Margin", values: ["-148.1%", "10.0%", "25.0%", "33.0%", "50.0%"] },
+    { label: "Lives Insured", values: ["7,000", "20,000", "60,000", "140,000", "320,000"] },
   ];
 
   // Mobile View
@@ -117,10 +117,10 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
   // Total Gross Written Premium data for bar chart (in millions)
   const gwpData = [
     { year: "2026", value: 6.1, displayValue: "$6.1M" },
-    { year: "2027", value: 74.6, displayValue: "$74.6M" },
-    { year: "2028", value: 267.8, displayValue: "$267.8M" },
-    { year: "2029", value: 346.5, displayValue: "$346.5M" },
-    { year: "2030", value: 505.8, displayValue: "$505.8M" },
+    { year: "2027", value: 114, displayValue: "$114M" },
+    { year: "2028", value: 342, displayValue: "$342M" },
+    { year: "2029", value: 798, displayValue: "$798M" },
+    { year: "2030", value: 1800, displayValue: "$1.8B" },
   ];
   const maxPremium = Math.max(...gwpData.map(d => d.value));
 
@@ -168,10 +168,6 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
 
           {/* Right Column - Bar Chart + Projections Table */}
           <div className="flex-1 flex flex-col justify-center">
-            <h3 className="text-lg font-semibold text-brand-darkBlue mb-2">
-              Total Gross Written Premium*
-            </h3>
-            
             {/* Combined Bar Chart + Year Labels + Table */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -179,12 +175,15 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="w-full"
             >
-              {/* Bars Row */}
-              <div className="grid grid-cols-6 gap-3 h-40">
-                <div /> {/* Empty first column */}
+              {/* Bars Row - Using explicit multiplier-based heights */}
+              <div className="grid grid-cols-6 gap-3 h-52">
+                <div /> {/* Empty - label will be in year row */}
                 {gwpData.map((item, index) => {
-                  const maxBarHeight = 150;
-                  const barHeight = Math.max(12, (item.value / maxPremium) * maxBarHeight);
+                  // Hardcoded heights based on user's multipliers:
+                  // 2027 = 19x 2026, 2028 = 3x 2027, 2029 = 2.5x 2028, 2030 = 2.2x 2029
+                  // Working backwards from max: 2030=170, 2029=77, 2028=31, 2027=10, 2026=5
+                  const barHeights = [5, 10, 31, 77, 170];
+                  const barHeight = barHeights[index];
                   
                   return (
                     <div key={item.year} className="flex flex-col items-center justify-end">
@@ -208,9 +207,11 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
                 })}
               </div>
 
-              {/* Year Labels Row - Acts as midpoint anchor */}
-              <div className="grid grid-cols-6 gap-3 py-2 bg-gray-50 border-y border-gray-200">
-                <div />
+              {/* Year Labels Row with GWP label - Acts as midpoint anchor */}
+              <div className="grid grid-cols-6 gap-3 py-3 bg-gray-50 border-y border-gray-200">
+                <div>
+                  <p className="text-sm font-bold text-brand-darkBlue">Total Gross Written Premium*</p>
+                </div>
                 {projectionYears.map((year) => (
                   <div key={year} className="text-center">
                     <p className="text-sm font-bold text-brand-darkBlue">{year}</p>

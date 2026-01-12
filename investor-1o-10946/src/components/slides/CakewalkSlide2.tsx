@@ -139,7 +139,7 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
                 <div className="flex h-40 w-40 md:h-48 md:w-48 items-center justify-center rounded-full bg-brand-blue shadow-lg">
                   {/* Single large pulsing icon representing enterprise */}
                   <motion.div
-                    className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/20 border-2 border-white/40"
+                    className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white/20 border-2 border-white/40"
                     animate={{
                       scale: [1, 1.15, 1],
                       opacity: [0.8, 1, 0.8],
@@ -166,7 +166,7 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
                 =
               </motion.span>
 
-              {/* Right Circle - SMB Pooling with animated floating circles */}
+              {/* Right Circle - SMB Pooling with interlocked pulsing circles */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -174,64 +174,65 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
                 className="flex flex-col items-center"
               >
                 <div className="relative flex h-40 w-40 md:h-48 md:w-48 items-center justify-center rounded-full bg-brand-mint shadow-lg overflow-hidden">
-                  {/* Many small animated circles representing SMBs - fluid motion */}
-                  {Array.from({ length: 35 }).map((_, i) => {
-                    // Varied sizes for visual interest
-                    const size = 8 + Math.random() * 14; // 8-22px
-                    // Distribute across the circle
-                    const angle = (i / 35) * Math.PI * 2 + Math.random() * 0.5;
-                    const radius = 15 + Math.random() * 30; // % from center
-                    const initialX = 50 + Math.cos(angle) * radius;
-                    const initialY = 50 + Math.sin(angle) * radius;
-                    // Slower, more fluid animation
-                    const duration = 4 + Math.random() * 4; // 4-8 seconds
-                    const delay = Math.random() * 3; // staggered start
+                  {/* Interlocked circles in honeycomb pattern - all pulsing together */}
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    animate={{
+                      scale: [1, 1.08, 1],
+                      opacity: [0.85, 1, 0.85],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {/* Honeycomb-style interlocked circles */}
+                    {/* Center circle */}
+                    <div className="absolute w-7 h-7 rounded-full bg-white/30 border-2 border-white/50" style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />
                     
-                    // Create smooth circular/orbital motion paths
-                    const orbitRadius = 8 + Math.random() * 12;
-                    const direction = Math.random() > 0.5 ? 1 : -1;
+                    {/* Inner ring - 6 circles */}
+                    {[0, 60, 120, 180, 240, 300].map((angle, i) => {
+                      const rad = (angle * Math.PI) / 180;
+                      const x = 50 + Math.cos(rad) * 14;
+                      const y = 50 + Math.sin(rad) * 14;
+                      return (
+                        <div
+                          key={`inner-${i}`}
+                          className="absolute w-6 h-6 rounded-full bg-white/25 border-2 border-white/40"
+                          style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
+                        />
+                      );
+                    })}
                     
-                    return (
-                      <motion.div
-                        key={i}
-                        className="absolute rounded-full bg-brand-darkBlue/25 border border-brand-darkBlue/20"
-                        style={{
-                          width: size,
-                          height: size,
-                          left: `${initialX}%`,
-                          top: `${initialY}%`,
-                          transform: 'translate(-50%, -50%)',
-                        }}
-                        animate={{
-                          x: [
-                            0,
-                            direction * orbitRadius,
-                            direction * orbitRadius * 0.7,
-                            0,
-                            -direction * orbitRadius * 0.5,
-                            -direction * orbitRadius,
-                            0,
-                          ],
-                          y: [
-                            0,
-                            orbitRadius * 0.5,
-                            orbitRadius,
-                            orbitRadius * 0.7,
-                            orbitRadius,
-                            orbitRadius * 0.3,
-                            0,
-                          ],
-                          opacity: [0.7, 0.9, 0.8, 1, 0.85, 0.75, 0.7],
-                        }}
-                        transition={{
-                          duration: duration,
-                          delay: delay,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
-                      />
-                    );
-                  })}
+                    {/* Middle ring - 12 circles */}
+                    {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => {
+                      const rad = (angle * Math.PI) / 180;
+                      const x = 50 + Math.cos(rad) * 28;
+                      const y = 50 + Math.sin(rad) * 28;
+                      return (
+                        <div
+                          key={`middle-${i}`}
+                          className="absolute w-5 h-5 rounded-full bg-white/20 border-2 border-white/35"
+                          style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
+                        />
+                      );
+                    })}
+                    
+                    {/* Outer ring - 18 circles */}
+                    {[0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340].map((angle, i) => {
+                      const rad = (angle * Math.PI) / 180;
+                      const x = 50 + Math.cos(rad) * 42;
+                      const y = 50 + Math.sin(rad) * 42;
+                      return (
+                        <div
+                          key={`outer-${i}`}
+                          className="absolute w-4 h-4 rounded-full bg-white/15 border border-white/30"
+                          style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
+                        />
+                      );
+                    })}
+                  </motion.div>
                 </div>
                 <span className="mt-3 text-sm md:text-base font-semibold text-brand-darkBlue text-center">
                   SMBs pooled via Cakewalk
