@@ -20,9 +20,10 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
       title: "Chief Executive Officer",
       image: paulPhoto,
       highlights: [
-        "ex-Chief Underwriting Officer at Prudential",
-        "Former Chief Insurance Officer at Salty (acquired by CDK Global).",
-        "President at IBX, exited to Alliant Insurance Services",
+        "Chief Underwriting Officer at Prudential",
+        "Chief Insurance Officer at Salty (acquired by CDK Global).",
+        "Co-Founder, President at IBX (acquired by Alliant Insurance Services)",
+        "Leading expert on group benefits underwriting",
       ],
     },
     {
