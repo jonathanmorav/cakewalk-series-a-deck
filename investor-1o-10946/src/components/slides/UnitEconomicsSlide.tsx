@@ -30,7 +30,7 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
     { label: "Year End ARR", values: ["$2.7M", "$7.7M", "$23.0M", "$53.8M", "$122.9M"], highlight: true },
     { label: "Net Income", values: ["-$4.0M", "$0.8M", "$5.8M", "$17.8M", "$61.5M"] },
     { label: "Net Margin", values: ["-148.1%", "10.0%", "25.0%", "33.0%", "50.0%"] },
-    { label: "Lives Insured", values: ["7,000", "20,000", "60,000", "140,000", "320,000"] },
+    { label: "SMBs Enrolled", values: ["1,400", "4,000", "12,000", "28,000", "64,000"] },
   ];
 
   // Mobile View
