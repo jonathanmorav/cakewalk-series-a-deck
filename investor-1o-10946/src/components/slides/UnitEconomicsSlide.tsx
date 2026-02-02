@@ -15,9 +15,9 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
   const isMobile = useIsMobile();
 
   const unitEconomicsCards = [
-    { label: "Premium Per Life / Month", value: "$460" },
-    { label: "Revenue Per Life / Month", value: "$32" },
-    { label: "Margin Per Life / Month", value: "$16" },
+    { label: "Premium Per SMB / Annually", value: "$27,600" },
+    { label: "Revenue Per SMB / Annually", value: "$1,920" },
+    { label: "Margin Per SMB / Annually", value: "$960" },
     { label: "LTV Per SMB", value: "$19,000" },
     { label: "Persistency", value: "95%" },
   ];
