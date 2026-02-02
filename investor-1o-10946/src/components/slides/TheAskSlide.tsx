@@ -79,7 +79,7 @@ const TheAskSlide = ({ onNavigateNext }: TheAskSlideProps) => {
 
           <div className="mt-4 pt-3 border-t border-gray-200">
             <p className="text-brand-gray text-xs uppercase tracking-widest">Initial Close</p>
-            <p className="mt-1 text-lg font-semibold text-brand-darkBlue">February 2025</p>
+            <p className="mt-1 text-lg font-semibold text-brand-darkBlue">February 2026</p>
           </div>
         </motion.div>
 
@@ -198,7 +198,7 @@ const TheAskSlide = ({ onNavigateNext }: TheAskSlideProps) => {
 
               <div className="mt-4 pt-3 border-t border-gray-200 w-full text-center">
                 <p className="text-brand-gray text-xs uppercase tracking-[0.18em]">Initial Close</p>
-                <p className="mt-1 text-xl font-semibold text-brand-darkBlue">February 2025</p>
+                <p className="mt-1 text-xl font-semibold text-brand-darkBlue">February 2026</p>
               </div>
             </div>
 
