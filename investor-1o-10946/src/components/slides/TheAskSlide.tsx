@@ -32,7 +32,7 @@ const TheAskSlide = ({ onNavigateNext }: TheAskSlideProps) => {
       textColor: "text-brand-mint",
       shortTerm: ["Scale to 200 active partners", "5 affinity group partnerships"],
       mediumTerm: ["1,000+ partners reselling", "Launch embedded partnerships", "National broker network"],
-      longTerm: ["Enterprise partnership capability", "Multi-channel distribution at scale", "International expansion readiness"],
+      longTerm: ["Enterprise partnership capability", "Multi-channel distribution at scale"],
     },
     {
       name: "Insurance Operations",

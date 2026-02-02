@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
     build: {
       // Output to repo-level docs for GitHub Pages
       // (within the repository root)
-      outDir: "docs",
+      outDir: "../docs",
       emptyOutDir: true,
     },
     plugins: [
