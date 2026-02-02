@@ -4,7 +4,7 @@ import SlideContainer from "@/components/ui/SlideContainer";
 import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import prudentialLogo from "@/assets/prudential-logo.png";
-import metlifeLogo from "@/assets/metlife-logo.png";
+import metlifeLogo from "@/assets/metlife-logo-icon.png";
 import sunlifeLogo from "@/assets/sunlife-logo.png";
 import AnimatedProductDemo from "@/components/solution/AnimatedProductDemo";
 import WebsiteEmbed from "@/components/solution/WebsiteEmbed";
@@ -206,10 +206,19 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
           </p>
 
           {/* Carrier Logos */}
-          <div className="mt-3 flex items-center justify-center gap-4">
-            <img src={prudentialLogo} alt="Prudential" className="h-8 w-auto object-contain opacity-80" />
-            <img src={metlifeLogo} alt="MetLife" className="h-8 w-auto object-contain opacity-80" />
-            <img src={sunlifeLogo} alt="Sun Life" className="h-8 w-auto object-contain opacity-80" />
+          <div className="mt-3 flex items-center justify-center gap-6">
+            <div className="flex flex-col items-center">
+              <img src={prudentialLogo} alt="Prudential" className="h-8 w-8 object-contain opacity-80" />
+              <span className="mt-1 text-[10px] font-medium text-brand-gray">Prudential</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src={metlifeLogo} alt="MetLife" className="h-8 w-8 object-contain opacity-80" />
+              <span className="mt-1 text-[10px] font-medium text-brand-gray">MetLife</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src={sunlifeLogo} alt="Sun Life" className="h-8 w-8 object-contain opacity-80" />
+              <span className="mt-1 text-[10px] font-medium text-brand-gray">Sun Life</span>
+            </div>
           </div>
         </motion.div>
 
@@ -400,10 +409,19 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
               </p>
 
               {/* Carrier Logos */}
-              <div className="mt-4 flex items-center justify-center gap-8">
-                <img src={prudentialLogo} alt="Prudential" className="h-16 w-auto object-contain opacity-80" />
-                <img src={metlifeLogo} alt="MetLife" className="h-16 w-auto object-contain opacity-80" />
-                <img src={sunlifeLogo} alt="Sun Life" className="h-16 w-auto object-contain opacity-80" />
+              <div className="mt-4 flex items-center justify-center gap-10">
+                <div className="flex flex-col items-center">
+                  <img src={prudentialLogo} alt="Prudential" className="h-14 w-14 object-contain opacity-80" />
+                  <span className="mt-2 text-sm font-medium text-brand-gray">Prudential</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src={metlifeLogo} alt="MetLife" className="h-14 w-14 object-contain opacity-80" />
+                  <span className="mt-2 text-sm font-medium text-brand-gray">MetLife</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src={sunlifeLogo} alt="Sun Life" className="h-14 w-14 object-contain opacity-80" />
+                  <span className="mt-2 text-sm font-medium text-brand-gray">Sun Life</span>
+                </div>
               </div>
             </motion.div>
           </motion.div>
