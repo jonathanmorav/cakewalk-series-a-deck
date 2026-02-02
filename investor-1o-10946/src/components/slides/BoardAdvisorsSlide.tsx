@@ -16,17 +16,6 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
 
   const boardMembers = [
     {
-      name: "Paul Gable",
-      title: "Chief Executive Officer",
-      image: paulPhoto,
-      highlights: [
-        "Chief Underwriting Officer at Prudential",
-        "Chief Insurance Officer at Salty (acquired by CDK Global).",
-        "Co-Founder, President at IBX (acquired by Alliant Insurance Services)",
-        "Leading expert on group benefits underwriting",
-      ],
-    },
-    {
       name: "Kevin McCarthy",
       title: "Board Director",
       image: kevinPhoto,
@@ -43,6 +32,17 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
         "Founder & Executive Chairman, Embedded Insurance",
         "Founder & CEO, Salty (Acquired by CDK Global)",
         "Founder & Executive Chairman, Insurance Point (Acquired by Arthur J. Gallagher)",
+      ],
+    },
+    {
+      name: "Paul Gable",
+      title: "Chief Executive Officer",
+      image: paulPhoto,
+      highlights: [
+        "Chief Underwriting Officer at Prudential",
+        "Chief Insurance Officer at Salty (acquired by CDK Global).",
+        "Co-Founder, President at IBX (acquired by Alliant Insurance Services)",
+        "Leading expert on group benefits underwriting",
       ],
     },
   ];
