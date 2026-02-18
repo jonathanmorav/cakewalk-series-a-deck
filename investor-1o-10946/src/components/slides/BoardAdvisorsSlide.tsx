@@ -3,7 +3,6 @@ import SlideContainer from "@/components/ui/SlideContainer";
 import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Check } from "lucide-react";
-import paulPhoto from "@/assets/team-paul.jpeg";
 import kevinPhoto from "@/assets/board-kevin.jpeg";
 import jamesPhoto from "@/assets/board-james.jpeg";
 
@@ -32,17 +31,6 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
         "Founder & Executive Chairman, Embedded Insurance",
         "Founder & CEO, Salty (Acquired by CDK Global)",
         "Founder & Executive Chairman, Insurance Point (Acquired by Arthur J. Gallagher)",
-      ],
-    },
-    {
-      name: "Paul Gable",
-      title: "Chief Executive Officer",
-      image: paulPhoto,
-      highlights: [
-        "Chief Underwriting Officer at Prudential",
-        "Chief Insurance Officer at Salty (acquired by CDK Global).",
-        "Co-Founder, President at IBX (acquired by Alliant Insurance Services)",
-        "Leading expert on group benefits underwriting",
       ],
     },
   ];
@@ -134,7 +122,7 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-10 flex flex-1 items-center justify-center"
         >
-          <div className="grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
             {boardMembers.map((member) => (
               <article
                 key={member.name}
