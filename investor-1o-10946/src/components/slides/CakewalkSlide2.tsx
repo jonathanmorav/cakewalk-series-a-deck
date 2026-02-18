@@ -66,7 +66,7 @@ const CompactBrowserDemo = () => {
             {activeTab === "underwriting" && (
               <WebsiteEmbed 
                 title="Real Time Underwriting"
-                url="https://showcase.john.cakewalkinsurance.com/?a=taa&age=40&zipCode=54545&annualSalary=50000&reg=true&call=true&mode=compact"
+                url="https://john.cakewalkinsurance.com/?a=taa"
                 description="Live showcase"
               />
             )}
