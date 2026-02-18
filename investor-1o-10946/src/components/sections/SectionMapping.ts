@@ -54,7 +54,7 @@ export const sections: DeckSection[] = [
   { id: "board-advisors", title: "Board of Directors", slideNumber: "10" },
   { id: "unit-economics", title: "Unit Economics", slideNumber: "11" },
   { id: "traction", title: "Traction", slideNumber: "12" },
-  { id: "the-ask", title: "The Ask", slideNumber: "13" },
+  { id: "the-ask", title: "The Raise", slideNumber: "13" },
   { id: "conclusion", title: "Conclusion", slideNumber: "14" },
 ];
 
