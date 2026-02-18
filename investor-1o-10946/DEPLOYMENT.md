@@ -26,8 +26,8 @@ This project has a specific structure that's important to understand for success
 
 1. **Git repo root is `/Series A/`**, not `/Series A/investor-1o-10946/`
 2. **GitHub Pages serves from `/Series A/docs/`** (repo root)
-3. **Vite builds to `/Series A/investor-1o-10946/docs/`** (project subfolder)
-4. **You must manually sync** the build output to the repo root docs folder
+3. **Vite builds directly to `/Series A/docs/`** via `outDir: "../docs"`
+4. **Do not manually sync** from `/Series A/investor-1o-10946/docs/` (that folder may be stale)
 
 ---
 
@@ -52,18 +52,9 @@ cd "/Users/jonathanmorav/Series A/investor-1o-10946"
 npm run build
 ```
 
-This outputs to `/Series A/investor-1o-10946/docs/`
+This outputs directly to `/Series A/docs/`
 
-### 4. Sync build to repo root docs folder
-
-```bash
-# Remove old assets and copy new ones
-rm -rf "/Users/jonathanmorav/Series A/docs/assets"
-cp -R "/Users/jonathanmorav/Series A/investor-1o-10946/docs/assets" "/Users/jonathanmorav/Series A/docs/"
-cp "/Users/jonathanmorav/Series A/investor-1o-10946/docs/index.html" "/Users/jonathanmorav/Series A/docs/"
-```
-
-### 5. Commit and push the docs folder
+### 4. Commit and push the docs folder
 
 ```bash
 cd "/Users/jonathanmorav/Series A"
@@ -72,7 +63,7 @@ git commit -m "Build: Update docs for GitHub Pages deployment"
 git push origin main
 ```
 
-### 6. Wait for deployment
+### 5. Wait for deployment
 
 - GitHub Pages deployment takes 1-3 minutes
 - Check status: https://github.com/jonathanmorav/cakewalk-series-a-deck/deployments
@@ -87,9 +78,6 @@ Run this from the project directory after making changes:
 ```bash
 cd "/Users/jonathanmorav/Series A/investor-1o-10946" && \
 npm run build && \
-rm -rf "../docs/assets" && \
-cp -R docs/assets ../docs/ && \
-cp docs/index.html ../docs/ && \
 cd .. && \
 git add -f docs && \
 git commit -m "Build: Deploy to GitHub Pages" && \
@@ -117,7 +105,7 @@ git push origin main
 **Symptom:** Hard refresh doesn't show changes
 
 **Possible causes:**
-1. **Wrong docs folder:** Check that `/Series A/docs/` (not `/Series A/investor-1o-10946/docs/`) has the new files
+1. **Wrong docs folder / stale sync:** Check that `/Series A/docs/` has the new files and avoid copying from `/Series A/investor-1o-10946/docs/`
 2. **CDN caching:** Wait 2-5 minutes, try incognito window
 3. **Check file hashes:** The JS/CSS filenames should change with each build
 
