@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import SlideContainer from "@/components/ui/SlideContainer";
 import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
@@ -15,30 +16,31 @@ interface TAMSlideProps {
  */
 const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) => {
   const isMobile = useIsMobile();
+  const [showSources, setShowSources] = useState(false);
 
-  const samCircle = {
-    id: "sam",
-    label: "SAM",
-    value: "$656B",
-    valueSources: "1-7,8",
-    detail: "≤50-employee share of employment (38.85%).",
-    circleClassName: "bg-brand-mint text-brand-darkBlue",
-    sizeClassName: "h-44 w-44 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-80 lg:w-80",
-    labelClassName: "text-brand-mint",
-  };
-
-  const tamCircle = {
-    id: "tam",
-    label: "TAM",
+  const totalMarketCircle = {
+    id: "total-market",
+    label: "Total U.S. Benefits Premium Market",
     value: "$1.69T",
     valueSources: "1-7",
-    detail: "U.S. employer-sponsored benefits premiums.",
+    detail: "All U.S. employer-sponsored benefits premiums.",
     circleClassName: "bg-brand-blue text-white",
     sizeClassName: "h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]",
     labelClassName: "text-brand-blue",
   };
 
-  const circleDetails = [tamCircle, samCircle];
+  const tamCircle = {
+    id: "tam",
+    label: "TAM",
+    value: "$656B",
+    valueSources: "1-7,8",
+    detail: "Addressable SMB market (<=50 employees; 38.85% of total market).",
+    circleClassName: "bg-brand-mint text-brand-darkBlue",
+    sizeClassName: "h-44 w-44 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-80 lg:w-80",
+    labelClassName: "text-brand-mint",
+  };
+
+  const circleDetails = [totalMarketCircle, tamCircle];
 
   const sourceLinks = [
     {
@@ -130,16 +132,56 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
           className="space-y-3 w-full"
         >
           {circleDetails.map((item) => (
-            <div key={item.id} className="flex items-center gap-2">
+            <div key={item.id} className="flex items-start gap-3">
               <span className={`h-3 w-3 rounded-full ${item.circleClassName}`} />
               <div>
-                <p className={`text-xs font-semibold uppercase tracking-widest ${item.labelClassName}`}>
+                <p className={`text-sm font-semibold leading-snug ${item.labelClassName}`}>
                   {item.label}
                 </p>
-                <p className="text-xs text-brand-gray">{item.detail}</p>
+                <p className="mt-1 text-sm text-brand-gray leading-relaxed">{item.detail}</p>
               </div>
             </div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className="mt-5 w-full"
+        >
+          <button
+            type="button"
+            onClick={() => setShowSources((prev) => !prev)}
+            className="inline-flex items-center gap-2 rounded-full border border-brand-blue/15 bg-white/85 px-4 py-2 text-sm font-medium text-brand-gray hover:text-brand-darkBlue transition-colors"
+            aria-expanded={showSources}
+          >
+            {showSources ? "Hide sources" : "Show sources"}
+          </button>
+          <div
+            className={`mt-3 overflow-hidden rounded-lg border border-brand-blue/10 bg-white/90 transition-all duration-300 ${
+              showSources ? "max-h-72 p-3 opacity-100" : "max-h-0 p-0 opacity-0 border-transparent"
+            }`}
+          >
+            <div className="space-y-2 text-xs text-brand-gray leading-relaxed max-h-64 overflow-auto">
+              {sourceLinks.map((source) => (
+                <span key={source.id} className="block">
+                  {source.id}.{" "}
+                  <a
+                    className="underline decoration-brand-blue/40 hover:text-brand-blue"
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {source.label}
+                  </a>
+                </span>
+              ))}
+              <span className="block">
+                Notes: midpoints used where sources provide ranges; supplemental health 2024 total derived from the 2024 product table in source 6.
+              </span>
+            </div>
+          </div>
         </motion.div>
       </MobileSlideContainer>
     );
@@ -179,13 +221,13 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.45, delay: 0.45 }}
-                  className={`absolute inset-0 flex items-center justify-center rounded-full shadow-md ${tamCircle.circleClassName}`}
+                  className={`absolute inset-0 flex items-center justify-center rounded-full shadow-md ${totalMarketCircle.circleClassName}`}
                 >
                   <span className="absolute top-4 left-1/2 -translate-x-1/2 text-xl sm:text-2xl md:text-3xl font-bold">
-                    {tamCircle.value}
-                    {tamCircle.valueSources ? (
+                    {totalMarketCircle.value}
+                    {totalMarketCircle.valueSources ? (
                       <span className="align-super text-[0.6rem] ml-0.5">
-                        {tamCircle.valueSources}
+                        {totalMarketCircle.valueSources}
                       </span>
                     ) : null}
                   </span>
@@ -213,53 +255,62 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
               </div>
             </div>
 
-            <div className="grid gap-4 text-center md:text-left">
+            <div className="grid gap-6 text-center md:text-left">
               {circleDetails.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.55 + index * 0.1 }}
-                  className="max-w-sm"
+                  className="max-w-md"
                 >
                   <div className="flex items-center gap-3">
                     <span className={`h-3 w-3 rounded-full ${item.circleClassName}`} />
                     <p
-                      className={`text-sm font-semibold uppercase tracking-[0.2em] ${item.labelClassName}`}
+                      className={`text-base font-semibold leading-snug ${item.labelClassName}`}
                     >
                       {item.label}
                     </p>
                   </div>
-                  <p className="mt-1 text-sm text-brand-gray">{item.detail}</p>
+                  <p className="mt-2 text-base text-brand-gray leading-relaxed">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.div>
 
-        <div className="mt-3 group text-[10px] text-brand-gray/50 leading-relaxed">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-blue/10 bg-white/80 px-3 py-1">
-            <span className="font-medium text-brand-gray/60">Sources</span>
-            <span className="text-[9px] text-brand-gray/60">Hover to expand</span>
-          </div>
-          <div className="mt-2 max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-out group-hover:max-h-48 group-hover:opacity-100">
-            {sourceLinks.map((source) => (
-              <span key={source.id} className="block">
-                {source.id}{" "}
-                <a
-                  className="underline decoration-brand-blue/40 hover:text-brand-blue"
-                  href={source.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {source.label}
-                </a>
+        <div className="mt-4 w-full max-w-6xl text-brand-gray leading-relaxed">
+          <button
+            type="button"
+            onClick={() => setShowSources((prev) => !prev)}
+            className="inline-flex items-center gap-2 rounded-full border border-brand-blue/15 bg-white/85 px-4 py-2 text-sm font-medium text-brand-gray hover:text-brand-darkBlue transition-colors"
+            aria-expanded={showSources}
+          >
+            {showSources ? "Hide sources" : "Show sources"}
+          </button>
+          <div
+            className={`mt-3 overflow-hidden rounded-xl border border-brand-blue/10 bg-white/90 transition-all duration-300 ${
+              showSources ? "max-h-72 p-4 opacity-100" : "max-h-0 p-0 opacity-0 border-transparent"
+            }`}
+          >
+            <div className="space-y-2 text-sm leading-relaxed max-h-60 overflow-auto">
+              {sourceLinks.map((source) => (
+                <span key={source.id} className="block">
+                  {source.id}.{" "}
+                  <a
+                    className="underline decoration-brand-blue/40 hover:text-brand-blue"
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {source.label}
+                  </a>
+                </span>
+              ))}
+              <span className="block">
+                Notes: midpoints used where sources provide ranges; supplemental health 2024 total derived from the 2024 product table in source 6.
               </span>
-            ))}
-            <span className="block">
-              Notes: midpoints used where sources provide ranges; supplemental health 2024 total derived from 2024 product table
-              in source 6.
-            </span>
+            </div>
           </div>
         </div>
       </div>
