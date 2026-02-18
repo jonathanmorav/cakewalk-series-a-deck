@@ -297,7 +297,7 @@ const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSl
             className="flex w-[42%] flex-shrink-0 flex-col items-center justify-center pr-6"
           >
             {/* Mini Headline */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-darkBlue mb-8">
+            <h2 className="text-[clamp(1.1rem,2.2vw,1.75rem)] font-bold text-brand-darkBlue mb-8 whitespace-nowrap">
               Same Pool, Same Risk, Same Benefits
             </h2>
 
