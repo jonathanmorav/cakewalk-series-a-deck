@@ -60,8 +60,8 @@ const CompactBrowserDemo = () => {
         </div>
 
         {/* Content Area - Scaled */}
-        <div className="flex-1 overflow-hidden" style={{ minHeight: "420px" }}>
-          <div className="transform scale-[0.65] origin-top-left" style={{ width: "154%", height: "154%" }}>
+        <div className="flex-1 overflow-hidden" style={{ minHeight: "400px" }}>
+          <div className="transform scale-[0.82] origin-top-left" style={{ width: "122%", height: "122%" }}>
             {activeTab === "registration" && <AnimatedProductDemo />}
             {activeTab === "underwriting" && (
               <WebsiteEmbed 
