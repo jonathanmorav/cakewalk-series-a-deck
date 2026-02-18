@@ -5,9 +5,11 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface GTMDistributionProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
-const GTMDistribution = ({ onNavigateNext }: GTMDistributionProps) => {
+const GTMDistribution = ({ onNavigateNext, slideNumber, totalSlides }: GTMDistributionProps) => {
   const isMobile = useIsMobile();
 
   if (isMobile) {
@@ -36,6 +38,8 @@ const GTMDistribution = ({ onNavigateNext }: GTMDistributionProps) => {
       background="bg-white"
       onNavigateNext={onNavigateNext}
       sectionLabel="Go-To-Market"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16 pb-20 z-10">

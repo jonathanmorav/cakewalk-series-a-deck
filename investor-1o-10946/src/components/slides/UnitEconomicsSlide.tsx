@@ -5,13 +5,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface UnitEconomicsSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
  * Slide: Unit Economics & Projections
  * Combined view with unit economics row + projections table
  */
-const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
+const UnitEconomicsSlide = ({ onNavigateNext, slideNumber, totalSlides }: UnitEconomicsSlideProps) => {
   const isMobile = useIsMobile();
 
   const unitEconomicsCards = [
@@ -130,6 +132,8 @@ const UnitEconomicsSlide = ({ onNavigateNext }: UnitEconomicsSlideProps) => {
       background="bg-white"
       onNavigateNext={onNavigateNext}
       sectionLabel="Unit Economics"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col px-10 lg:px-16 pt-10 pb-16 z-10">
         {/* Headline */}

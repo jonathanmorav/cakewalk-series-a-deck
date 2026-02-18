@@ -5,13 +5,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface TheAskSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
  * Slide 13: The Ask — Funding Request
  * Investment ask with growth milestones and integrated allocation.
  */
-const TheAskSlide = ({ onNavigateNext }: TheAskSlideProps) => {
+const TheAskSlide = ({ onNavigateNext, slideNumber, totalSlides }: TheAskSlideProps) => {
   const isMobile = useIsMobile();
 
   // Milestone matrix with integrated allocation percentages
@@ -164,6 +166,8 @@ const TheAskSlide = ({ onNavigateNext }: TheAskSlideProps) => {
       navArrowClassName="text-white hover:text-brand-mint transition-colors"
       sectionLabel="The Ask"
       lightLabel
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       {/* Glow effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-mint/10 rounded-full blur-3xl" />

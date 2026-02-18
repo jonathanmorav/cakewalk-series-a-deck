@@ -8,9 +8,11 @@ import jamesPhoto from "@/assets/board-james.jpeg";
 
 interface BoardAdvisorsSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
-const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
+const BoardAdvisorsSlide = ({ onNavigateNext, slideNumber, totalSlides }: BoardAdvisorsSlideProps) => {
   const isMobile = useIsMobile();
 
   const boardMembers = [
@@ -103,6 +105,8 @@ const BoardAdvisorsSlide = ({ onNavigateNext }: BoardAdvisorsSlideProps) => {
       background="bg-gradient-to-br from-white via-brand-cream/30 to-brand-lightMint/20"
       onNavigateNext={onNavigateNext}
       sectionLabel="Board of Directors"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col px-10 pb-12 pt-10 md:px-14 lg:px-16">
         <motion.div

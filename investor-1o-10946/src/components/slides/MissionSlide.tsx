@@ -5,6 +5,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MissionSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
@@ -13,7 +15,7 @@ interface MissionSlideProps {
  * Simple & bold per YC best practices:
  * - Mission (hero text)
  */
-const MissionSlide = ({ onNavigateNext }: MissionSlideProps) => {
+const MissionSlide = ({ onNavigateNext, slideNumber, totalSlides }: MissionSlideProps) => {
   const isMobile = useIsMobile();
 
   // Mobile View
@@ -49,6 +51,8 @@ const MissionSlide = ({ onNavigateNext }: MissionSlideProps) => {
       navArrowClassName="text-white hover:text-brand-mint transition-colors"
       sectionLabel="Mission"
       lightLabel
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       {/* Glow effects for atmosphere */}
       <div className="absolute top-20 right-1/4 w-96 h-96 bg-brand-mint/10 rounded-full blur-3xl" />

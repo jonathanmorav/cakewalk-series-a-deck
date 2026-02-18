@@ -5,13 +5,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface TAMSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
  * Slide 5: TAM / SAM / SOM
  * YC-style: simple framing, big numbers, clear addressable definition
  */
-const TAMSlide = ({ onNavigateNext }: TAMSlideProps) => {
+const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) => {
   const isMobile = useIsMobile();
 
   const samCircle = {
@@ -149,6 +151,8 @@ const TAMSlide = ({ onNavigateNext }: TAMSlideProps) => {
       background="bg-gradient-to-br from-white via-brand-cream/30 to-brand-lightBlue/10"
       onNavigateNext={onNavigateNext}
       sectionLabel="Total Addressable Market"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-12 lg:px-16 pb-16">
         <motion.div

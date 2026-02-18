@@ -5,9 +5,11 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface CompetitiveAdvantageSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
-const CompetitiveAdvantageSlide = ({ onNavigateNext }: CompetitiveAdvantageSlideProps) => {
+const CompetitiveAdvantageSlide = ({ onNavigateNext, slideNumber, totalSlides }: CompetitiveAdvantageSlideProps) => {
   const isMobile = useIsMobile();
 
   const comparisonRows = [
@@ -103,6 +105,8 @@ const CompetitiveAdvantageSlide = ({ onNavigateNext }: CompetitiveAdvantageSlide
       background="bg-white"
       onNavigateNext={onNavigateNext}
       sectionLabel="Competitive Advantage"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col px-10 pb-12 pt-10 md:px-14 lg:px-16">
         {/* Headline */}

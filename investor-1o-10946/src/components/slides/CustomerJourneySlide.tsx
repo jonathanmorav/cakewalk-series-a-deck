@@ -5,13 +5,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface CustomerJourneySlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
  * Slide: "The Need" - SMB Customer Journey with Pain Points
  * Large, impactful process bar with all pain points below
  */
-const CustomerJourneySlide = ({ onNavigateNext }: CustomerJourneySlideProps) => {
+const CustomerJourneySlide = ({ onNavigateNext, slideNumber, totalSlides }: CustomerJourneySlideProps) => {
   const isMobile = useIsMobile();
 
   const stages = [
@@ -103,6 +105,8 @@ const CustomerJourneySlide = ({ onNavigateNext }: CustomerJourneySlideProps) => 
       background="bg-white"
       onNavigateNext={onNavigateNext}
       sectionLabel="The Need"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col px-4 pt-10 pb-16 z-10">
         {/* Headline - matches other slides */}

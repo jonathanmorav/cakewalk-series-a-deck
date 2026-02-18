@@ -5,9 +5,11 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MilestonesSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
-const MilestonesSlide = ({ onNavigateNext }: MilestonesSlideProps) => {
+const MilestonesSlide = ({ onNavigateNext, slideNumber, totalSlides }: MilestonesSlideProps) => {
   const isMobile = useIsMobile();
 
   // Traction stats
@@ -59,6 +61,8 @@ const MilestonesSlide = ({ onNavigateNext }: MilestonesSlideProps) => {
       background="bg-white"
       onNavigateNext={onNavigateNext}
       sectionLabel="Traction"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center px-10 md:px-14 lg:px-16">
         {/* Traction Headline */}

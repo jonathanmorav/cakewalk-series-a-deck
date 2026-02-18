@@ -10,6 +10,8 @@ import nivPhoto from "@/assets/team-niv.jpeg";
 
 interface TeamProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 const leadership = [
@@ -56,7 +58,7 @@ const leadership = [
   }
 ];
 
-const Team = ({ onNavigateNext }: TeamProps) => {
+const Team = ({ onNavigateNext, slideNumber, totalSlides }: TeamProps) => {
   const isMobile = useIsMobile();
 
   // Mobile View
@@ -113,7 +115,13 @@ const Team = ({ onNavigateNext }: TeamProps) => {
 
   // Desktop View
   return (
-    <SlideContainer background="bg-white" onNavigateNext={onNavigateNext} sectionLabel="Team">
+    <SlideContainer
+      background="bg-white"
+      onNavigateNext={onNavigateNext}
+      sectionLabel="Team"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
+    >
       <div className="absolute inset-0 flex flex-col px-10 pb-12 pt-10 md:px-14 lg:px-16">
         <motion.header
           initial={{ opacity: 0, y: 20 }}

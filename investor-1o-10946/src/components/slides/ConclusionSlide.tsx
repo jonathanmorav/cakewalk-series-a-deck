@@ -5,13 +5,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ConclusionSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
  * Slide 14: Conclusion
  * Mirror the Mission slide's bold, minimal treatment.
  */
-const ConclusionSlide = ({ onNavigateNext }: ConclusionSlideProps) => {
+const ConclusionSlide = ({ onNavigateNext, slideNumber, totalSlides }: ConclusionSlideProps) => {
   const isMobile = useIsMobile();
 
   // Mobile View
@@ -55,6 +57,8 @@ const ConclusionSlide = ({ onNavigateNext }: ConclusionSlideProps) => {
       navArrowClassName="text-white hover:text-brand-mint transition-colors"
       sectionLabel="Conclusion"
       lightLabel
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       {/* Glow effects for atmosphere */}
       <div className="absolute top-20 right-1/4 w-96 h-96 bg-brand-mint/10 rounded-full blur-3xl" />

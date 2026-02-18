@@ -93,9 +93,11 @@ const CompactBrowserDemo = () => {
 
 interface CakewalkSlide2Props {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
-const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
+const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSlide2Props) => {
   const isMobile = useIsMobile();
 
   // Mobile View
@@ -253,6 +255,8 @@ const CakewalkSlide2 = ({ onNavigateNext }: CakewalkSlide2Props) => {
       background="bg-gradient-to-br from-brand-cream/40 via-white to-brand-lightMint/40"
       onNavigateNext={onNavigateNext}
       sectionLabel="Cakewalk"
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       <div className="absolute inset-0 flex flex-col px-10 md:px-14 lg:px-16 pb-12 pt-10">
         {/* Headline */}

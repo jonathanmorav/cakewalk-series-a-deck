@@ -46,7 +46,7 @@ const CoverSlide = ({ onNavigateNext }: CoverSlideProps) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            Series A Investor Deck
+            Series A-1 Investor Deck
           </motion.h1>
 
           <motion.p
@@ -90,7 +90,7 @@ const CoverSlide = ({ onNavigateNext }: CoverSlideProps) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Series A Investor Deck
+          Series A-1 Investor Deck
         </motion.h1>
 
         <motion.p

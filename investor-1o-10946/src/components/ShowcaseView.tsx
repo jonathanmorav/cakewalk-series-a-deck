@@ -13,6 +13,12 @@ interface ShowcaseViewProps {
   onNavigateNext: () => void;
 }
 
+interface SlideRenderProps {
+  onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
+}
+
 const ShowcaseView: React.FC<ShowcaseViewProps> = ({ 
   currentSectionId, 
   onNavigate, 
@@ -21,8 +27,12 @@ const ShowcaseView: React.FC<ShowcaseViewProps> = ({
   const { isFullScreen, isPseudoFullScreen, toggleFullScreen } = useFullScreen();
   
   // Get the current section component to render
-  const CurrentSection = sectionComponents[currentSectionId as keyof typeof sectionComponents] || 
+  const CurrentSection =
+    (sectionComponents[currentSectionId as keyof typeof sectionComponents] as React.ComponentType<SlideRenderProps>) ||
     (() => <p>Section not found</p>);
+  const currentSectionIndex = sections.findIndex((section) => section.id === currentSectionId);
+  const slideNumber = currentSectionIndex >= 0 ? currentSectionIndex + 1 : undefined;
+  const isCoverSlide = currentSectionId === "cover";
 
   useEffect(() => {
     if (!isFullScreen) return;
@@ -86,7 +96,11 @@ const ShowcaseView: React.FC<ShowcaseViewProps> = ({
           )}
         >
           <div className={cn(isFullScreen && "min-h-screen pb-20")}> 
-            <CurrentSection onNavigateNext={onNavigateNext} />
+            <CurrentSection
+              onNavigateNext={onNavigateNext}
+              slideNumber={isCoverSlide ? undefined : slideNumber}
+              totalSlides={sections.length}
+            />
           </div>
         </motion.div>
       </AnimatePresence>

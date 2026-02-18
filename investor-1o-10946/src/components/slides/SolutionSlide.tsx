@@ -5,13 +5,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SolutionSlideProps {
   onNavigateNext: () => void;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
 /**
  * Slide 3: The Solution
  * Bold hero headline
  */
-const SolutionSlide = ({ onNavigateNext }: SolutionSlideProps) => {
+const SolutionSlide = ({ onNavigateNext, slideNumber, totalSlides }: SolutionSlideProps) => {
   const isMobile = useIsMobile();
 
   // Mobile View
@@ -46,6 +48,8 @@ const SolutionSlide = ({ onNavigateNext }: SolutionSlideProps) => {
       navArrowClassName="text-white hover:text-brand-mint transition-colors"
       sectionLabel="The Solution"
       lightLabel
+      slideNumber={slideNumber}
+      totalSlides={totalSlides}
     >
       {/* Subtle glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-mint/10 rounded-full blur-3xl" />
