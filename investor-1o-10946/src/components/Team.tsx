@@ -37,16 +37,6 @@ const leadership = [
     ]
   },
   {
-    name: "Bill Kennedy",
-    title: "Chief Revenue Officer",
-    image: billPhoto,
-    highlights: [
-      "President of Heritage One, scaling mid-market benefits distribution.",
-      "Directed growth and partnerships at MGC Group.",
-      "20+ years building carrier and broker relationships."
-    ]
-  },
-  {
     name: "Niv Ben-Dor",
     title: "Chief Product Officer",
     image: nivPhoto,
@@ -54,6 +44,16 @@ const leadership = [
       "VP, Products at Cover Whale, a high-growth insurtech.",
       "Head of Product & Monetization at Content IQ (acquired by Perion).",
       "Product-led growth expert focused on intuitive experiences."
+    ]
+  },
+  {
+    name: "Bill Kennedy",
+    title: "Chief Revenue Officer",
+    image: billPhoto,
+    highlights: [
+      "President of Heritage One, scaling mid-market benefits distribution.",
+      "Directed growth and partnerships at MGC Group.",
+      "20+ years building carrier and broker relationships."
     ]
   }
 ];
