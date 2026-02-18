@@ -16,6 +16,7 @@ const CompactBrowserDemo = () => {
   const tabs = [
     { id: "registration", title: "Registration", url: "cakewalkbenefits.com/register" },
     { id: "underwriting", title: "Instant Underwriting", url: "cakewalkbenefits.com/underwriting" },
+    { id: "shopping", title: "Shopping", url: "cakewalkbenefits.com/shopping" },
     { id: "checkout", title: "Checkout", url: "cakewalkbenefits.com/checkout" },
     { id: "wallet", title: "Benefits Wallet", url: "cakewalkbenefits.com/wallet" },
   ];
@@ -68,6 +69,13 @@ const CompactBrowserDemo = () => {
                 title="Real Time Underwriting"
                 url="https://john.cakewalkinsurance.com/?a=taa"
                 description="Live showcase"
+              />
+            )}
+            {activeTab === "shopping" && (
+              <WebsiteEmbed 
+                title="Shopping"
+                url="https://demo.cakewalkbenefits.com/?flow=benefits&health=true"
+                description="Benefits shopping"
               />
             )}
             {activeTab === "checkout" && (
@@ -234,7 +242,7 @@ const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSl
           <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4">
             <p className="text-xs text-brand-gray text-center mb-3">Experience the platform</p>
             <div className="grid grid-cols-2 gap-2">
-              {["Registration", "Underwriting", "Checkout", "Benefits Wallet"].map((tab) => (
+              {["Registration", "Underwriting", "Shopping", "Checkout", "Benefits Wallet"].map((tab) => (
                 <div
                   key={tab}
                   className="bg-brand-blue/5 rounded-lg px-3 py-2 text-center"
