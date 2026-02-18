@@ -454,14 +454,6 @@ const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSl
             className="flex flex-1 flex-col items-center justify-center pl-4"
           >
             <CompactBrowserDemo />
-            <a
-              href="https://jonathanmorav.github.io/cakewalk-series-a-deck/#cakewalk"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 text-xs text-brand-blue hover:text-brand-mint transition-colors underline decoration-brand-blue/30"
-            >
-              Open interactive demo &rarr;
-            </a>
           </motion.div>
         </div>
       </div>
