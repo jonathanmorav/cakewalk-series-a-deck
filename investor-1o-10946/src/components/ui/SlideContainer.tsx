@@ -105,7 +105,14 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
           <div className="absolute bottom-0 left-0 right-0 h-16 flex items-center justify-between px-6 z-20">
             {/* Slide Number (if provided) */}
             {slideNumber && totalSlides && (
-              <div className="text-sm text-brand-gray font-medium">
+              <div
+                className={cn(
+                  "text-sm font-medium",
+                  lightLabel
+                    ? "text-white/80 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+                    : "text-brand-gray/70"
+                )}
+              >
                 {slideNumber} / {totalSlides}
               </div>
             )}
