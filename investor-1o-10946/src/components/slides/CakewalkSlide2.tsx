@@ -25,7 +25,7 @@ const CompactBrowserDemo = () => {
   const getCurrentUrl = () => tabs.find(t => t.id === activeTab)?.url || "cakewalkbenefits.com";
 
   return (
-    <div className="w-full h-full max-w-2xl">
+    <div className="w-full h-full max-w-4xl">
       <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 h-full flex flex-col">
         {/* Browser Tabs - Compact */}
         <div className="bg-gray-50 border-b border-gray-200 px-2 pt-2">
@@ -294,7 +294,7 @@ const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSl
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-1 flex-col items-center justify-center pr-8"
+            className="flex w-[42%] flex-shrink-0 flex-col items-center justify-center pr-6"
           >
             {/* Mini Headline */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-darkBlue mb-8">
@@ -451,7 +451,7 @@ const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSl
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-1 flex-col items-center justify-center pl-8"
+            className="flex flex-1 flex-col items-center justify-center pl-4"
           >
             <CompactBrowserDemo />
           </motion.div>
