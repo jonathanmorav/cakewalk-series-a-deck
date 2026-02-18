@@ -216,7 +216,7 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
         >
           <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-center md:gap-12">
             <div className="relative flex items-center justify-center">
-              <div className={`relative ${tamCircle.sizeClassName}`}>
+              <div className={`relative ${totalMarketCircle.sizeClassName}`}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -240,13 +240,13 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
                   className="absolute inset-0 flex items-end justify-center pb-0"
                 >
                   <div
-                    className={`relative flex items-center justify-center rounded-full shadow-lg ${samCircle.circleClassName} ${samCircle.sizeClassName}`}
+                    className={`relative flex items-center justify-center rounded-full shadow-lg ${tamCircle.circleClassName} ${tamCircle.sizeClassName}`}
                   >
                     <span className="absolute top-3 left-1/2 -translate-x-1/2 text-lg sm:text-xl md:text-2xl font-bold">
-                      {samCircle.value}
-                      {samCircle.valueSources ? (
+                      {tamCircle.value}
+                      {tamCircle.valueSources ? (
                         <span className="align-super text-[0.55rem] ml-0.5">
-                          {samCircle.valueSources}
+                          {tamCircle.valueSources}
                         </span>
                       ) : null}
                     </span>
