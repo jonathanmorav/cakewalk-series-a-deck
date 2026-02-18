@@ -19,6 +19,7 @@ const CompactBrowserDemo = () => {
     { id: "shopping", title: "Shopping", url: "cakewalkbenefits.com/shopping" },
     { id: "checkout", title: "Checkout", url: "cakewalkbenefits.com/checkout" },
     { id: "wallet", title: "Benefits Wallet", url: "cakewalkbenefits.com/wallet" },
+    { id: "partner-lp", title: "Distribution Partner LP", url: "www.cakewalkbenefits.com/distributionpartnerlandingpage" },
   ];
 
   const getCurrentUrl = () => tabs.find(t => t.id === activeTab)?.url || "cakewalkbenefits.com";
@@ -90,6 +91,13 @@ const CompactBrowserDemo = () => {
                 title="Benefits Wallet"
                 url="https://owner-cockpit.lovable.app/benefits-wallet"
                 description="Digital wallet"
+              />
+            )}
+            {activeTab === "partner-lp" && (
+              <WebsiteEmbed 
+                title="Distribution Partner LP"
+                url="https://reseller.cakewalkbenefits.com/agent-owner/"
+                description="Distribution partner landing page"
               />
             )}
           </div>
@@ -242,7 +250,7 @@ const CakewalkSlide2 = ({ onNavigateNext, slideNumber, totalSlides }: CakewalkSl
           <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4">
             <p className="text-xs text-brand-gray text-center mb-3">Experience the platform</p>
             <div className="grid grid-cols-2 gap-2">
-              {["Registration", "Underwriting", "Shopping", "Checkout", "Benefits Wallet"].map((tab) => (
+              {["Registration", "Underwriting", "Shopping", "Checkout", "Benefits Wallet", "Partner LP"].map((tab) => (
                 <div
                   key={tab}
                   className="bg-brand-blue/5 rounded-lg px-3 py-2 text-center"
