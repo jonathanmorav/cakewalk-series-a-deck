@@ -24,9 +24,9 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
     value: "$1.69T",
     valueSources: "1-7",
     detail: "All U.S. employer-sponsored benefits premiums.",
-    circleClassName: "bg-brand-blue text-white",
+    circleClassName: "bg-brand-blue/10 text-brand-blue/50",
     sizeClassName: "h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]",
-    labelClassName: "text-brand-blue",
+    labelClassName: "text-brand-blue/50",
   };
 
   const tamCircle = {
@@ -35,7 +35,7 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
     value: "$656B",
     valueSources: "1-7,8",
     detail: "Addressable SMB market (<=50 employees; 38.85% of total market).",
-    circleClassName: "bg-brand-mint text-brand-darkBlue",
+    circleClassName: "bg-brand-mint text-brand-darkBlue ring-4 ring-brand-mint/25",
     sizeClassName: "h-44 w-44 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-80 lg:w-80",
     labelClassName: "text-brand-mint",
   };
@@ -113,12 +113,12 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
         >
           <div className="relative h-48 w-48">
             {/* TAM Circle */}
-            <div className="absolute inset-0 flex items-center justify-center rounded-full bg-brand-blue text-white shadow-md">
+            <div className="absolute inset-0 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue/50">
               <span className="absolute top-3 text-lg font-bold">$1.69T</span>
             </div>
 
-            {/* SAM Circle */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-28 w-28 flex items-center justify-center rounded-full bg-brand-mint text-brand-darkBlue shadow-lg">
+            {/* TAM Circle */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-28 w-28 flex items-center justify-center rounded-full bg-brand-mint text-brand-darkBlue shadow-xl ring-4 ring-brand-mint/25">
               <span className="absolute top-2 text-base font-bold">$656B</span>
             </div>
           </div>
@@ -221,7 +221,7 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.45, delay: 0.45 }}
-                  className={`absolute inset-0 flex items-center justify-center rounded-full shadow-md ${totalMarketCircle.circleClassName}`}
+                  className={`absolute inset-0 flex items-center justify-center rounded-full ${totalMarketCircle.circleClassName}`}
                 >
                   <span className="absolute top-4 left-1/2 -translate-x-1/2 text-xl sm:text-2xl md:text-3xl font-bold">
                     {totalMarketCircle.value}
@@ -240,7 +240,7 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
                   className="absolute inset-0 flex items-end justify-center pb-0"
                 >
                   <div
-                    className={`relative flex items-center justify-center rounded-full shadow-lg ${tamCircle.circleClassName} ${tamCircle.sizeClassName}`}
+                    className={`relative flex items-center justify-center rounded-full shadow-xl ${tamCircle.circleClassName} ${tamCircle.sizeClassName}`}
                   >
                     <span className="absolute top-3 left-1/2 -translate-x-1/2 text-lg sm:text-xl md:text-2xl font-bold">
                       {tamCircle.value}
