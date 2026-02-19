@@ -34,7 +34,7 @@ const TAMSlide = ({ onNavigateNext, slideNumber, totalSlides }: TAMSlideProps) =
     label: "TAM",
     value: "$656B",
     valueSources: "1-7,8",
-    detail: "Addressable SMB market (<=50 employees; 38.85% of total market).",
+    detail: "Addressable SMB market (<=50 employees; 38.85% of U.S. Labor Force).",
     circleClassName: "bg-brand-mint text-brand-darkBlue ring-4 ring-brand-mint/25",
     sizeClassName: "h-44 w-44 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-80 lg:w-80",
     labelClassName: "text-brand-mint",
