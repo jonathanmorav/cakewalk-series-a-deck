@@ -36,7 +36,7 @@ const TheAskSlide = ({ onNavigateNext, slideNumber, totalSlides }: TheAskSlidePr
           <p className="mt-8 text-5xl font-bold text-brand-mint">$5M</p>
           <p className="mt-2 text-xl font-semibold text-white">New Equity Commitment</p>
 
-          <p className="mt-8 text-2xl font-medium text-white/95">$36.6M Pre-money Valuation</p>
+          <p className="mt-8 text-2xl font-medium text-white/95">$25M Pre-money Valuation</p>
           <p className="mt-1 text-base text-brand-mint/80">Series A-1</p>
 
           <div className="mt-10 pt-6 border-t border-white/20">
@@ -75,7 +75,7 @@ const TheAskSlide = ({ onNavigateNext, slideNumber, totalSlides }: TheAskSlidePr
           </h2>
 
           <p className="mt-8 text-2xl md:text-3xl lg:text-4xl font-medium text-white/95 leading-snug">
-            $36.6M Pre-money Valuation
+            $25M Pre-money Valuation
           </p>
           <p className="mt-2 text-lg md:text-xl text-brand-mint/80">Series A-1</p>
 
