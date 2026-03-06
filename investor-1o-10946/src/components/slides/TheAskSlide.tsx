@@ -37,12 +37,12 @@ const TheAskSlide = ({ onNavigateNext, slideNumber, totalSlides }: TheAskSlidePr
           <p className="mt-2 text-xl font-semibold text-white">New Equity Commitment</p>
 
           <p className="mt-8 text-2xl font-medium text-white/95">$25M Pre-money Valuation</p>
-          <p className="mt-1 text-base text-brand-mint/80">Series A-1</p>
+          <p className="mt-1 text-base text-brand-mint/80">Series Seed</p>
 
           <div className="mt-10 pt-6 border-t border-white/20">
             <p className="text-sm font-semibold uppercase tracking-wider text-brand-mint/90">Previous Round</p>
-            <p className="mt-3 text-xl font-semibold text-white">Seed Round &middot; SAFE Note</p>
-            <p className="mt-2 text-base text-white/80">757K raised &middot; 10M Post-Money Valuation Cap</p>
+            <p className="mt-3 text-xl font-semibold text-white">Pre-Seed &middot; SAFE Note</p>
+            <p className="mt-2 text-base text-white/80">$1.2M total capital invested</p>
           </div>
         </motion.div>
       </MobileSlideContainer>
@@ -77,15 +77,15 @@ const TheAskSlide = ({ onNavigateNext, slideNumber, totalSlides }: TheAskSlidePr
           <p className="mt-8 text-2xl md:text-3xl lg:text-4xl font-medium text-white/95 leading-snug">
             $25M Pre-money Valuation
           </p>
-          <p className="mt-2 text-lg md:text-xl text-brand-mint/80">Series A-1</p>
+          <p className="mt-2 text-lg md:text-xl text-brand-mint/80">Series Seed</p>
 
           <div className="mt-12 pt-8 border-t border-white/20 max-w-2xl mx-auto">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-mint/90">Previous Round</p>
             <p className="mt-4 text-xl md:text-2xl font-semibold text-white">
-              Seed Round &middot; SAFE Note
+              Pre-Seed &middot; SAFE Note
             </p>
             <p className="mt-2 text-base md:text-lg text-white/80">
-              757K raised &middot; 10M Post-Money Valuation Cap
+              $1.2M total capital invested
             </p>
           </div>
         </motion.div>
