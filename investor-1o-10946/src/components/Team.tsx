@@ -5,7 +5,6 @@ import MobileSlideContainer from "@/components/ui/MobileSlideContainer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import paulPhoto from "@/assets/team-paul.jpeg";
 import jonathanPhoto from "@/assets/team-jonathan.jpeg";
-import billPhoto from "@/assets/team-bill.jpeg";
 import nivPhoto from "@/assets/team-niv.jpeg";
 
 interface TeamProps {
@@ -46,16 +45,6 @@ const leadership = [
       "Product-led growth expert focused on intuitive experiences."
     ]
   },
-  {
-    name: "Bill Kennedy",
-    title: "Chief Revenue Officer",
-    image: billPhoto,
-    highlights: [
-      "President of Heritage One, scaling mid-market benefits distribution.",
-      "Directed growth and partnerships at MGC Group.",
-      "20+ years building carrier and broker relationships."
-    ]
-  }
 ];
 
 const Team = ({ onNavigateNext, slideNumber, totalSlides }: TeamProps) => {
@@ -122,14 +111,14 @@ const Team = ({ onNavigateNext, slideNumber, totalSlides }: TeamProps) => {
       slideNumber={slideNumber}
       totalSlides={totalSlides}
     >
-      <div className="absolute inset-0 flex flex-col px-10 pb-12 pt-10 md:px-14 lg:px-16">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-10 pb-12 pt-10 md:px-14 lg:px-16">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto w-full text-center"
+          className="w-full text-center"
         >
-          <h1 className="mt-3 text-3xl font-bold text-brand-darkBlue md:text-5xl whitespace-nowrap">
+          <h1 className="text-3xl font-bold text-brand-darkBlue md:text-5xl whitespace-nowrap">
             Operators, Product Builders, and Insurance Veterans
           </h1>
         </motion.header>
@@ -138,17 +127,17 @@ const Team = ({ onNavigateNext, slideNumber, totalSlides }: TeamProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-10 grid flex-1 gap-6 md:grid-cols-2"
+          className="mt-10 grid w-full gap-6 md:grid-cols-3"
         >
           {leadership.map((leader) => (
             <article
               key={leader.name}
-              className="rounded-2xl border border-brand-blue/15 bg-white/95 p-6 shadow-md transition hover:-translate-y-1 hover:shadow-lg"
+              className="rounded-2xl border border-brand-blue/15 bg-white/95 px-5 py-4 shadow-md transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-blue/70">
                 Leadership
               </p>
-              <div className="mt-4 flex items-center gap-4">
+              <div className="mt-3 flex items-center gap-4">
                 <img
                   src={leader.image}
                   alt={`${leader.name} headshot`}
@@ -159,7 +148,7 @@ const Team = ({ onNavigateNext, slideNumber, totalSlides }: TeamProps) => {
                   <p className="text-sm font-medium text-brand-gray">{leader.title}</p>
                 </div>
               </div>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-3 space-y-1.5">
                 {leader.highlights.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-brand-gray">
                     <span className="mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-mint/40">
