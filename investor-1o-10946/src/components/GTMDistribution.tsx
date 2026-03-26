@@ -25,8 +25,9 @@ const GTMDistribution = ({ onNavigateNext, slideNumber, totalSlides }: GTMDistri
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             className="text-2xl font-bold text-brand-darkBlue text-center leading-relaxed"
           >
-            Our initial GTM leverages trusted partner led distribution to create a{" "}
-            <span className="text-brand-blue">SMB-to-SMB referral flywheel</span>.
+            Building the SMB distribution flywheel through embedded partnerships and
+            {" "}
+            <span className="text-brand-blue">data-driven acquisition</span>.
           </motion.h1>
         </div>
       </MobileSlideContainer>
@@ -49,8 +50,9 @@ const GTMDistribution = ({ onNavigateNext, slideNumber, totalSlides }: GTMDistri
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-darkBlue text-center max-w-5xl leading-tight"
         >
-          Our initial GTM leverages trusted partner led distribution to create a{" "}
-          <span className="text-brand-blue">SMB-to-SMB referral flywheel</span>.
+          Building the SMB distribution flywheel through embedded partnerships and
+          {" "}
+          <span className="text-brand-blue">data-driven acquisition</span>.
         </motion.h1>
       </div>
     </SlideContainer>
