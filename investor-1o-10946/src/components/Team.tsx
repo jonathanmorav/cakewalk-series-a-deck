@@ -15,24 +15,24 @@ interface TeamProps {
 
 const leadership = [
   {
-    name: "Paul Gable",
+    name: "Jonathan Morav",
     title: "Chief Executive Officer",
+    image: jonathanPhoto,
+    highlights: [
+      "Executive roles across Operations, Product, Strategy, and GTM at Fabric.",
+      "Scaled complex venture / high growth startups from 0 --> 30 million a year in revenue and 50 --> 120 million a year in revenue",
+      "Cross-functional leader delivering across operations, strategy, and GTM."
+    ]
+  },
+  {
+    name: "Paul Gable",
+    title: "Chief Insurance Officer",
     image: paulPhoto,
     highlights: [
       "Chief Underwriting Officer at Prudential",
       "Chief Insurance Officer at Salty (acquired by CDK Global).",
       "Co-Founder, President at IBX (acquired by Alliant Insurance Services)",
       "Leading expert on group benefits underwriting"
-    ]
-  },
-  {
-    name: "Jonathan Morav",
-    title: "Chief Operating Officer",
-    image: jonathanPhoto,
-    highlights: [
-      "Executive roles across Operations, Product, Strategy, and GTM at Fabric.",
-      "Scaled complex venture / high growth startups from 0 --> 30 million a year in revenue and 50 --> 120 million a year in revenue",
-      "Cross-functional leader delivering across operations, strategy, and GTM."
     ]
   },
   {
