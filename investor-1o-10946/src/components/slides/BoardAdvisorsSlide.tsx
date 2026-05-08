@@ -5,6 +5,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Check } from "lucide-react";
 import kevinPhoto from "@/assets/board-kevin.jpeg";
 import jamesPhoto from "@/assets/board-james.jpeg";
+import monaPhoto from "@/assets/board-mona.png";
 
 interface BoardAdvisorsSlideProps {
   onNavigateNext: () => void;
@@ -33,6 +34,15 @@ const BoardAdvisorsSlide = ({ onNavigateNext, slideNumber, totalSlides }: BoardA
         "Founder & Executive Chairman, Embedded Insurance",
         "Founder & CEO, Salty (Acquired by CDK Global)",
         "Founder & Executive Chairman, Insurance Point (Acquired by Arthur J. Gallagher)",
+      ],
+    },
+    {
+      name: "Mona Eliassen",
+      title: "Board Director",
+      image: monaPhoto,
+      highlights: [
+        "Founder & Chief Executive Officer, Clear Point",
+        "Founder & Chief Executive Officer, Eliassen Group",
       ],
     },
   ];
@@ -126,7 +136,7 @@ const BoardAdvisorsSlide = ({ onNavigateNext, slideNumber, totalSlides }: BoardA
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-10 flex flex-1 items-center justify-center"
         >
-          <div className="grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
             {boardMembers.map((member) => (
               <article
                 key={member.name}
